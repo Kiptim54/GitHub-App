@@ -1,8 +1,9 @@
 <div class="container">
-  <form class="form-group">
+  <form #userForm='ngForm'class="form-group">
     <label for="username"> Username: </label>
-      <input type="text" name="username" class="form-control">
-      <button type="submit">Enter</button>
+      <input type="text"  name="username" class="form-control" [(ngModel)]=username (keyup)="Username(username)">
+      <button type="submit" (click)="Username(username)">Search</button>
+      
   </form>
    <div class="row">
      <div class="col-md-6">
@@ -13,7 +14,7 @@
       <h2>  <a href="{{user.html_url}}">GitHub Repositories</a> </h2>
     <div *ngFor='let repo of repos'>
       <ul>
-      <li>{{repo.name}}</li>
+      <li>Name: {{repo.name}}<br> Description: {{repo.description}}<br> <a href="{{repo.homepage}}" target="_blank" >Deployed Site</a></li>
       </ul>
     </div>
      </div>

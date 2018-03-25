@@ -11,15 +11,22 @@ import { Repo } from '../repo';
 })
 export class DisplayComponent implements OnInit {
     user:User;
-    gitusername:string="Kiptim54";
-    repo:Repo;
+    username:string="Kiptim54";
+    //repo:Repo;
     repos;
+  
     
-    
+    // Username(username){
+    //   alert(username);
+    // }
     
   constructor(private http:HttpClient) { }
+  ngOnInit(){}
 
-  ngOnInit() {
+  Username(username:string) {
+    this.username=username;
+    console.log("working");
+    
   interface ApiResponse1 {
     login:any;
     avatar_url:any;
@@ -30,15 +37,15 @@ export class DisplayComponent implements OnInit {
   data:any;
 
   } 
-    this.http.get<ApiResponse2>("https://api.github.com/users/" +this.gitusername+"/repos?access_token="+environment.access_token).subscribe(data=>{
+    this.http.get<ApiResponse2>("https://api.github.com/users/" + this.username +"/repos?access_token="+environment.access_token).subscribe(data=>{
      this.repos = data;
-        // this.repo=new Repo(data);
+        
       
     })
   
     
                              
-  this.http.get<ApiResponse1>("https://api.github.com/users/"+this.gitusername+"?access_token="+environment.access_token).subscribe(data=>{
+  this.http.get<ApiResponse1>("https://api.github.com/users/"+this.username+"?access_token="+environment.access_token).subscribe(data=>{
       this.user= new User(data.login, data.avatar_url, data.repos_url, data.html_url)
     })
   }
