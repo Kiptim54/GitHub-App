@@ -26,6 +26,8 @@ export class DisplayComponent implements OnInit {
   Username(username:string) {
     this.username=username;
     console.log("working");
+    this.username="";
+    
     
   interface ApiResponse1 {
     login:any;
@@ -37,7 +39,7 @@ export class DisplayComponent implements OnInit {
   data:any;
 
   } 
-    this.http.get<ApiResponse2>("https://api.github.com/users/" + this.username +"/repos?access_token="+environment.access_token).subscribe(data=>{
+    this.http.get<ApiResponse2>("https://api.github.com/users/" + username +"/repos?access_token="+environment.access_token).subscribe(data=>{
      this.repos = data;
         
       
@@ -45,9 +47,11 @@ export class DisplayComponent implements OnInit {
   
     
                              
-  this.http.get<ApiResponse1>("https://api.github.com/users/"+this.username+"?access_token="+environment.access_token).subscribe(data=>{
+  this.http.get<ApiResponse1>("https://api.github.com/users/"+username+"?access_token="+environment.access_token).subscribe(data=>{
       this.user= new User(data.login, data.avatar_url, data.repos_url, data.html_url)
     })
+  
   }
+ 
 
 }

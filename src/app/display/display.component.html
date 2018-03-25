@@ -1,7 +1,7 @@
 <div class="container">
   <form #userForm='ngForm'class="form-group">
     <label for="username"> Username: </label>
-      <input type="text"  name="username" class="form-control" [(ngModel)]=username (keyup)="Username(username)">
+      <input type="text"  name="username" class="form-control" [(ngModel)]=username>
       <button type="submit" (click)="Username(username)">Search</button>
       
   </form>
@@ -10,20 +10,19 @@
         <img src="{{user.avatar_url}}">
       <h3> {{user.login}}</h3>
     </div>
-     <div class="col-md-6">
+     <div class="col-md-6" >
+       <div id="repositories">
       <h2>  <a href="{{user.html_url}}">GitHub Repositories</a> </h2>
-    <div *ngFor='let repo of repos'>
-      <ul>
-      <li>Name: {{repo.name}}<br> Description: {{repo.description}}<br> <a href="{{repo.homepage}}" target="_blank" >Deployed Site</a></li>
-      </ul>
+ 
+  <div class="card" style="width: 18rem;" *ngFor='let repo of repos'>
+    <div class="card-body">
+      <h5 class="card-title"><a href="{{user.html_url}}">Name: {{repo.name}} </a></h5>
+      <p class="card-text">{{repo.description}}</p>
+      <a href="{{repo.homepage}}" class="btn btn-dark mb-3">View Site</a>
     </div>
-     </div>
   </div>
- 
-
- 
-
-
+  </div>
+  <!--(keyup)="Username(username)"-->
  
 
 

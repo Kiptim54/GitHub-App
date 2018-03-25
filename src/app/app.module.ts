@@ -5,12 +5,14 @@ import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DisplayComponent
+    DisplayComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
