@@ -7,8 +7,8 @@
   </form>
    <div class="row">
      <div class="col-md-6">
-        <img src="{{user.avatar_url}}">
-      <h3> {{user.login}}</h3>
+        <img id="image" src="{{user.avatar_url}}">
+      <h3 class="username"> {{user.login}}</h3>
     </div>
      <div class="col-md-6" >
        <div id="repositories">
@@ -16,7 +16,7 @@
  
   <div class="card" style="width: 18rem;" *ngFor='let repo of repos'>
     <div class="card-body">
-      <h5 class="card-title"><a href="{{user.html_url}}">Name: {{repo.name}} </a></h5>
+      <h5 class="card-title"><a href="{{user.html_url}}">{{repo.name}} </a></h5>
       <p class="card-text">{{repo.description}}</p>
       <a href="{{repo.homepage}}" class="btn btn-dark mb-3">View Site</a>
     </div>

@@ -3,3 +3,13 @@
     overflow: scroll;
     scroll-behavior: smooth;
 }
+#image{
+    border-radius:100%;
+    width:50%;
+    height:40%;
+}
+.username{
+margin-left:14%;
+margin-top:3%;
+
+}
