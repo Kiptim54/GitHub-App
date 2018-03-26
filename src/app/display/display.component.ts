@@ -13,10 +13,6 @@ import { UsernameRequestService} from '../username-http/username-request.service
 })
 export class DisplayComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
-
-
-  ngOnInit(){}
     user:User;
     username:string="Kiptim54";
     //repo:Repo;
@@ -27,15 +23,18 @@ export class DisplayComponent implements OnInit {
     //   alert(username);
     // }
     
-    Username(username) {
-      this.username=username;
-      console.log("working");
-      this.username="";
-       
+   
 
-i constructor(private usernameservice:UsernameService) { 
+constructor(private usernameservice:UsernameRequestService) { 
     
     
+  
+}
+Username(username) {
+  this.usernameservice.Updateuser(this.username)
+  console.log("working");
+  this.username="";
+
   this.usernameservice.getgituser().subscribe(data=>{
     console.log(data);
     this.user=data;
@@ -47,7 +46,7 @@ i constructor(private usernameservice:UsernameService) {
     this.repos=repos;
     
   })
-}
+}  
 
 ngOnInit() {
 }

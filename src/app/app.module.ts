@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
  import{ FormsModule } from '@angular/forms';
  import { UsernameRequestService} from './username-http/username-request.service'
+ import { HttpModule } from '@angular/http'
 
 import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';
@@ -18,7 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [UsernameRequestService],
   bootstrap: [AppComponent]

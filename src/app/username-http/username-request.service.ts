@@ -4,58 +4,38 @@ import {environment} from '../../environments/environment';
 import { User } from '../user';
 import{ Repo } from '../repo';
 import { Component, OnInit } from '@angular/core';
-
+import { Http, Headers } from '@angular/http';
+import  'rxjs/add/operator/map';
 
 
 @Injectable()
 export class UsernameRequestService {
-  user:User;
-  repo:Repo;
-  repos;
-  
-  username:string="Kiptim54";
+  private username:string;
+  private apikey='fbd28b3d6df1df30788f906bf66c0d8d7faf1be8';
 
-  constructor(private http:HttpClient) { }
-  
-  
-  
-
-  Username(username) {
+  constructor(private http:Http) {
+    console.log("service is now ready");
+    this.username="Kiptim54";
+   }
+   Username(username) {
     this.username=username;
     console.log("working");
     this.username="";
-    
-    
-  interface ApiResponse1 {
-    login:any;
-    avatar_url:any;
-    repos_url:any;
-    html_url:any;
-  }  
-  interface ApiResponse2{
-  data:any;
-
   } 
-    this.http.get<ApiResponse1>("https://api.github.com/users/" + username +"/repos?access_token="+environment.access_token).toPromise().then(data=>{
-        
-      this.repos = data;
-
-        
-    }
-    )
-
-this.http.get<ApiResponse1>("https://api.github.com/users/"+username+"?access_token="+environment.access_token).subscribe(data=>{
-  this.user= new User(data.login, data.avatar_url, data.repos_url, data.html_url)
-})
-
-
-}
- 
-}
-
   
-    
-                             
+   getgituser(){
+     return this.http.get("https://api.github.com/users/"+this.username+"?access_token="+this.apikey)
+     .map(res=>res.json());
+   }
+   getgitrepo(){
+    return this.http.get("https://api.github.com/users/"+this.username+"/repos?access_token="+this.apikey)
+    .map(res=>res.json());
+  }
+  Updateuser(username:string){
+    this.username=username;
+  }
+}
+                 
  
   
 
