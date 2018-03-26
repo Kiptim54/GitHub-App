@@ -1,27 +1,32 @@
-# GithubApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
-## Development server
+# KIPTIM |  GitHub Search Application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## This is web application created at Moringa school coding bootcamp by Brenda Kiptim.
 
-## Code scaffolding
+## **Brenda Kiptim**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Description
 
-## Build
+This is a web application that displays GitHub users accounts and shows all their repositiries amongst other details
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+## Project setup instructions
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To view github page [click here.]()
 
-## Running end-to-end tests
+## link to live site on GitHub Pages
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+[Github App](/)
 
-## Further help
+## Technologies Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+HTML CSS Bootstrap Typescript Angular
+
+## Support and contact details
+
+Contact me: Kiptim54@gmail.com
+
+### License
+
+The content of this project itself is licensed under the Creative Commons Attribution 3.0 license, and the underlying source code used to format and display that content is licensed under the MIT license.
