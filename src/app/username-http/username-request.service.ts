@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 @Injectable()
 export class UsernameRequestService {
   user:User;
-  
+  repo:Repo;
   repos;
   
   username:string="Kiptim54";
