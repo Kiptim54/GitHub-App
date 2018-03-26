@@ -3,11 +3,13 @@ import {HttpClient} from '@angular/common/http';
 import { User } from '../user';
 import{ environment } from '../../environments/environment';
 import { Repo } from '../repo';
+import { UsernameRequestService} from '../username-http/username-request.service'
 
 @Component({
   selector: 'app-display',
   templateUrl: './display.component.html',
-  styleUrls: ['./display.component.css']
+  styleUrls: ['./display.component.css'],
+  providers:[UsernameRequestService],
 })
 export class DisplayComponent implements OnInit {
     user:User;
@@ -20,8 +22,13 @@ export class DisplayComponent implements OnInit {
     //   alert(username);
     // }
     
-  constructor(private http:HttpClient) { }
-  ngOnInit(){}
+  constructor(usernameService=UsernameRequestService) {
+    
+   }
+  ngOnInit(){
+    this.usernameService=usernameRequest()
+    this.username=this.usernameService.username
+  } 
 
   Username(username:string) {
     this.username=username;
