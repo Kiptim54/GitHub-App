@@ -13,8 +13,9 @@ import { UsernameRequestService} from '../username-http/username-request.service
 })
 export class DisplayComponent implements OnInit {
 
-
   constructor(private http:HttpClient) { }
+
+
   ngOnInit(){}
     user:User;
     username:string="Kiptim54";
@@ -30,44 +31,32 @@ export class DisplayComponent implements OnInit {
       this.username=username;
       console.log("working");
       this.username="";
-      
-      
-    interface ApiResponse1 {
-      login:any;
-      avatar_url:any;
-      repos_url:any;
-      html_url:any;
-    }  
-    interface ApiResponse2{
-    data:any;
-  
-    } 
-      this.http.get<ApiResponse1>("https://api.github.com/users/" + username +"/repos?access_token="+environment.access_token).toPromise().then(data=>{
-          
-        this.repos = data;
-  
-          
-      }
-      )
-  
-  this.http.get<ApiResponse1>("https://api.github.com/users/"+username+"?access_token="+environment.access_token).subscribe(data=>{
-    this.user= new User(data.login, data.avatar_url, data.repos_url, data.html_url)
-  })
-  
-  
+       
+
+interface ApiResponse1 {
+  login:any;
+  avatar_url:any;
+  repos_url:any;
+  html_url:any;
+  } 
+  interface ApiResponse2{
+  data:any;
+  } 
+  this.http.get<ApiResponse2>("https://api.github.com/users/" + username +"/repos?access_token="+environment.access_token).toPromise().then(data=>{
+  this.repos = data;
   }
-   
-  }   
- // constructor(private usernameService:UsernameRequestService) {
- //   this.usernameService.Username(username)
-   // this.username=this.usernameService.username
+  )
+  this.http.get<ApiResponse1>("https://api.github.com/users/"+username+"?access_token="+environment.access_token).subscribe(data=>{
+  this.user= new User(data.login, data.avatar_url, data.repos_url, data.html_url)
+  })
+  }
+  } 
+  
       
- //  }
- // ngOnInit(){
- //   this.usernameService.Username(username)
-   // this.username=this.usernameService.username
- // }
+     
+  
+  
 
 
 
-//}
+
