@@ -33,29 +33,26 @@ export class DisplayComponent implements OnInit {
       this.username="";
        
 
-interface ApiResponse1 {
-  login:any;
-  avatar_url:any;
-  repos_url:any;
-  html_url:any;
-  } 
-  interface ApiResponse2{
-  data:any;
-  } 
-  this.http.get<ApiResponse2>("https://api.github.com/users/" + username +"/repos?access_token="+environment.access_token).toPromise().then(data=>{
-  this.repos = data;
-  }
-  )
-  this.http.get<ApiResponse1>("https://api.github.com/users/"+username+"?access_token="+environment.access_token).subscribe(data=>{
-  this.user= new User(data.login, data.avatar_url, data.repos_url, data.html_url)
+i constructor(private usernameservice:UsernameService) { 
+    
+    
+  this.usernameservice.getgituser().subscribe(data=>{
+    console.log(data);
+    this.user=data;
+  
+    
   })
-  }
-  } 
-  
-      
-     
-  
-  
+  this.usernameservice.getgitrepo().subscribe(repos=>{
+    console.log(repos);
+    this.repos=repos;
+    
+  })
+}
+
+ngOnInit() {
+}
+
+}
 
 
 
