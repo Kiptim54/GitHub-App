@@ -28,7 +28,7 @@ export class UsernameRequestService {
      .map(res=>res.json());
    }
    getgitrepo(){
-    return this.http.get("https://api.github.com/users/"+this.username+"/repos?access_token="+this.apikey)
+    return this.http.get("https://api.github.com/users/"+this.username+"/repos?access_token="+environment.access_token)
     .map(res=>res.json());
   }
   Updateuser(username:string){
