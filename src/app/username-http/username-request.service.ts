@@ -11,7 +11,7 @@ import  'rxjs/add/operator/map';
 @Injectable()
 export class UsernameRequestService {
   private username:string;
-  private apikey='fbd28b3d6df1df30788f906bf66c0d8d7faf1be8';
+  
 
   constructor(private http:Http) {
     console.log("service is now ready");
@@ -24,7 +24,7 @@ export class UsernameRequestService {
   } 
   
    getgituser(){
-     return this.http.get("https://api.github.com/users/"+this.username+"?access_token="+this.apikey)
+     return this.http.get("https://api.github.com/users/"+this.username+"?access_token="+environment.access_token)
      .map(res=>res.json());
    }
    getgitrepo(){
