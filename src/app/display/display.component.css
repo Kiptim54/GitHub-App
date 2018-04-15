@@ -1,11 +1,9 @@
-
-
 #image{
     border-radius:100%;
     width:50%;
     height:40%;
 }
-.username{
+.username, #title{
 margin-left:10%;
 margin-top:3%;
 
@@ -28,8 +26,6 @@ button{
     
 }
 input{
-    /*background-color:transparent;
-    color:white;*/
     border:2px solid;
     position:absolute;
     top:70%;
@@ -38,7 +34,7 @@ input{
     text-align: center
 
 }
-h2{
+.byte{
     color:white;
     text-align:center;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

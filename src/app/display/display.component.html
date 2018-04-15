@@ -1,6 +1,6 @@
 
   <div id="input">
-      <h2>All Github repositories available at a click of a button</h2>
+      <h2 class="byte">All Github repositories available at a click of a button</h2>
   <form #userForm='ngForm'class="form-group">
     
       <input type="text"  name="username" class="form-control" [(ngModel)]=username>
@@ -15,15 +15,11 @@
         <img class="img-responsive" id="image" src="{{user.avatar_url}}">
       <h3 class="username"> {{user.login}}</h3>
       <h2 id="title">  <a href="{{user.html_url}}">GitHub Repositories</a> </h2>
-    </div>
-  </div>
-    
-      
-       <div class="row">
+   
 
        <div id="repositories">
-        <div class="col-md-6">   
-  <div class="card" style="width: 20rem" *ngFor='let repo of repos'>
+       
+  <div class="card" style="width: 50rem" *ngFor='let repo of repos'>
    
     <div class="card-body">
       <h5 class="card-title"><a href="{{user.html_url}}">{{repo.name}} </a></h5>
@@ -32,9 +28,9 @@
     </div>
   </div>
   </div>
-  </div>
 </div>
- 
+</div>
+
   <!--(keyup)="Username(username)"-->
  
 
