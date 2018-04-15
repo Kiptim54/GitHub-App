@@ -1,15 +1,77 @@
-#repositories{
-    height:100vh;
-    overflow: scroll;
-    scroll-behavior: smooth;
+/* *{
+    display:none;
+} */
+.container{
+    
+    overflow-x: hidden;
 }
+
+
 #image{
     border-radius:100%;
     width:50%;
     height:40%;
 }
 .username{
-margin-left:14%;
+margin-left:10%;
 margin-top:3%;
 
 }
+#input{
+    background-image: url('https://thumbs.gfycat.com/ClumsyChiefDassierat-max-1mb.gif');
+    background-repeat: repeat;
+    height:100vh;
+    opacity: .9;
+    margin-top:-1.6%;
+}
+button{
+    background-color:#0A2325;
+    padding:.5%;
+    color:white;
+    position:absolute;
+    left:45%;
+    width:12%;
+    top:80%;
+    
+}
+input{
+    /*background-color:transparent;
+    color:white;*/
+    border:2px solid;
+    position:absolute;
+    top:70%;
+    width:50%;
+    left:25%;
+    text-align: center
+
+}
+h2{
+    color:white;
+    text-align:center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position:absolute;
+    top:55%;
+    width:35%;
+    left:35%;
+
+}
+#title{
+    position:absolute;
+    top:95%;
+    width:35%;
+    left:35%;
+
+
+}
+
+.repos{
+    background-image: url("https://static8.depositphotos.com/1451970/918/i/950/depositphotos_9188718-stock-photo-cream-marble-background.jpg")
+    
+}
+#image, #body{
+    padding-top: 3%;
+    margin-left: 25%;
+
+
+}
+

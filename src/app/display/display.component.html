@@ -1,20 +1,29 @@
-<div class="container">
+
+  <div id="input">
+      <h2>All Github repositories available at a click of a button</h2>
   <form #userForm='ngForm'class="form-group">
-    <label for="username"> Username: </label>
+    
       <input type="text"  name="username" class="form-control" [(ngModel)]=username>
-      <button type="submit" (click)="Username(username)">Search</button>
+      <br>
+      <button type="submit" (click)="Username(username)" appColor>Search GitHub User</button>
       
   </form>
-   <div class="row">
-     <div class="col-md-6">
-        <img id="image" src="{{user.avatar_url}}">
+</div>
+   <div class="row" class="repos">
+     <div class="col-md-12">
+       <div id="image">
+        <img class="img-responsive" id="image" src="{{user.avatar_url}}">
       <h3 class="username"> {{user.login}}</h3>
+      <h2 id="title">  <a href="{{user.html_url}}">GitHub Repositories</a> </h2>
     </div>
-     <div class="col-md-6" >
+  </div>
+    
        <div id="repositories">
-      <h2>  <a href="{{user.html_url}}">GitHub Repositories</a> </h2>
- 
-  <div class="card" style="width: 18rem;" *ngFor='let repo of repos'>
+      
+       
+      
+  <div class="card" style="width: 20rem" *ngFor='let repo of repos'>
+    <div class="col-md-6" >
     <div class="card-body">
       <h5 class="card-title"><a href="{{user.html_url}}">{{repo.name}} </a></h5>
       <p class="card-text">{{repo.description}}</p>
@@ -22,6 +31,9 @@
     </div>
   </div>
   </div>
+  </div>
+  
+  
   <!--(keyup)="Username(username)"-->
  
 
