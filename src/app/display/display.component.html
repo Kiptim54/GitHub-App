@@ -18,12 +18,13 @@
     </div>
   </div>
     
+      
+       <div class="row">
+
        <div id="repositories">
-      
-       
-      
+        <div class="col-md-6">   
   <div class="card" style="width: 20rem" *ngFor='let repo of repos'>
-    <div class="col-md-6" >
+   
     <div class="card-body">
       <h5 class="card-title"><a href="{{user.html_url}}">{{repo.name}} </a></h5>
       <p class="card-text">{{repo.description}}</p>
@@ -32,8 +33,8 @@
   </div>
   </div>
   </div>
-  
-  
+</div>
+ 
   <!--(keyup)="Username(username)"-->
  
 
